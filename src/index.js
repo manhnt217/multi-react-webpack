@@ -7,10 +7,3 @@ import('./user1/main').then(
     console.log(htmlString)
   }
 )
-
-import('./user2/main').then(
-  comp => {
-    const htmlString = ReactDOMServer.renderToString(React.createElement(comp.default, {message: 'GGMU'}, null));
-    console.log(htmlString)
-  }
-)

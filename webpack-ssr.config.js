@@ -4,9 +4,7 @@
 const webpack = require("webpack");
 const path = require("path");
 // const FileListPlugin = require("./src/FileListPlugin");
-// const HelloPlugin = require("./src/HelloPlugin");
 const WebpackCleanPlugin = require("webpack-clean-plugin");
-// const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 /*
  * SplitChunksPlugin is enabled by default and replaced
@@ -69,42 +67,48 @@ const commonRules = [
   }
 ];
 
-module.exports = {
-  module: {
-    rules: commonRules
-  },
+module.exports =
+  {
+    module: {
+      rules: commonRules
+    },
 
-  watch: true,
+    watch: true,
 
-  entry: {
-    // index1: "./src/user1/index.js",
-    // index2: "./src/user2/index.js",
-    linker: "./src/linker.js",
+    target: "node",
+    node: {
+      console: false,
+      global: false,
+      process: false,
+      Buffer: false,
+      __filename: false,
+      __dirname: false
+    },
 
-  },
+    entry: {
+      main: "./src/gen.js",
+    },
 
-  output: {
-    path: path.resolve(__dirname, './dist/js')
-    // filename: '[name].[chunkhash].js'
-  },
+    output: {
+      path: path.resolve(__dirname, 'ssr/'),
+      // filename: '[name].[chunkhash].js'
+      libraryTarget: 'var',
+      library: 'GenLib',
+      publicPath: '/'
+    },
 
-  mode: "development",
+    mode: "development",
 
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    }
-  },
-  plugins: [
-    new WebpackCleanPlugin({
-      on: "emit",
-      path: ["./dist/js"]
-    }),
-    // new HtmlWebPackPlugin({
-    //   template: "./index1.html",
-    //   filename: "./index1.html"
-    // }),
+    // optimization: {
+    //   splitChunks: {
 
-    // new HelloPlugin()
-  ]
-};
+    //     chunks: "all",
+    //   }
+    // },
+    plugins: [
+      // new WebpackCleanPlugin({
+      //   on: "emit",
+      //   path: ["./ssr"]
+      // }),
+    ]
+  };

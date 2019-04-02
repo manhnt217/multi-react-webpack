@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@manhnt217/magic-number": "^2.0.0"
+    "@manhnt217/magic-number": "^1.0.0"
   }
 }

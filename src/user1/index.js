@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 // import * as serviceWorker from './serviceWorker';
-import AwesomeComp from '../user1/main';
+import AwesomeComp from './main';
+// const AwesomeComp = lazy(() => import('../user1/main'));
 
 ReactDOM.render(<AwesomeComp />, document.getElementById('root'));
 
@@ -9,3 +10,5 @@ ReactDOM.render(<AwesomeComp />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 // serviceWorker.unregister();
+
+// console.log('Done')

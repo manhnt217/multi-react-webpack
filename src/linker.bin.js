@@ -196,6 +196,7 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = "./src/linker.js");
 /******/ })
 /************************************************************************/
+// Param of above function
 /******/ ({
 
 /***/ "./src/linker.js":
@@ -203,12 +204,12 @@
   !*** ./src/linker.js ***!
   \***********************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ function(module, exports, __webpack_require__) {
 
 // eval("Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./user1/index */ \"./src/user1/index.js\")).then(function (comp) {\n  console.log('Loaded index1');\n});\nPromise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./user1/index */ \"./src/user1/index.js\")).then(function (comp) {\n  console.log('Loaded index2');\n});\n\n//# sourceURL=webpack:///./src/linker.js?");
 
 Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./user2/index */ "./src/user2/index.js"))
 
-/***/ })
+/***/ }
 
 /******/ });
